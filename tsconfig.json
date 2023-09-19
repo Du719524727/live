@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6", // 编译的目标版本
+    "module": "commonjs", // 使用的模块系统
+    "strict": true, // 启用严格模式检查
+    "esModuleInterop": true // 启用跨模块的默认导入和导出
+  },
+  "include": [
+    "src/**/*.ts" // 需要编译的源文件路径
+  ],
+  "exclude": [
+    "node_modules" // 不需要编译的文件路径
+  ]
+}

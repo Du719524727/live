@@ -9,7 +9,7 @@ export default function Personal() {
   useEffect(() => {
     guard.trackSession().then((res: User | null) => {
       console.log('trackSession res: ', res)
-      setUserInfo(JSON.stringify(res, null, 2))
+      // setUserInfo(JSON.stringify(res, null, 2))
     })
   }, [])
 
@@ -25,8 +25,6 @@ export default function Personal() {
     })
 
     console.log('userProfile: ', userProfile)
-
-    // 更多 AuthenticationClient 的方法，请见 authing-js-sdk 文档介绍。
   }
 
   return (

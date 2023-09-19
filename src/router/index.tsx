@@ -3,10 +3,10 @@ import * as React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
-import Callback from '../pages/Callback.tsx'
-import Personal from '../pages/Personal.tsx'
-import TestGuard4 from '../pages/TestGuard4.tsx'
-import Basics from '../pages/Basics/index.tsx'
+import Callback from '../pages/Callback'
+import Personal from '../pages/Personal'
+import TestGuard4 from '../pages/TestGuard4'
+import Basics from '../pages/Basics/index'
 
 export default function RouterComponent() {
   return (
@@ -15,12 +15,12 @@ export default function RouterComponent() {
         <Route exact path="/">
           <TestGuard4 />
         </Route>
-        <Route exact path="/callback">
+        {/* <Route exact path="/callback">
           <Callback />
         </Route>
         <Route exact path="/personal">
           <Personal />
-        </Route>
+        </Route> */}
         <Route  exact path="/basics">
           <Basics />
         </Route>

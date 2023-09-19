@@ -15,7 +15,7 @@ import { useGuard } from '@authing/guard-react18'
 
 export const Basics = () => {
   const [calling, setCalling] = useState(false);
-  const isConnected = useIsConnected();
+  const isConnected = useIsConnected(); // 存储用户的连接状态
   const [appId, setAppId] = useState(""); 
   const [channel, setChannel] = useState(""); 
   const [token, setToken] = useState("");
@@ -33,6 +33,17 @@ export const Basics = () => {
   const guard = useGuard()
   const onLogout = () => guard.logout()
 
+  const onVerify = async () => {
+    if (channel === 'app') {
+      setAppId('b751b23b4f36458b97bfd00a6c304a7f')
+      setToken('007eJxTYFjc/6rlRVHwsbid6wwq+OR4KqM67x/bsdqmd+M52y67w68VGJLMTQ2TjIyTTNKMzUxMLZIszZPSUgwMEs2SjQ1MEs3T8jezpzYEMjLcXsHBzMgAgSA+M0NiQQEDAwCWFCAZ')
+    }
+
+    setCalling(true)
+  }
+
+ 
+
   return (
     <>
       <button className='authing-button' onClick={onLogout}>登出</button>
@@ -47,7 +58,7 @@ export const Basics = () => {
                 videoTrack={localCameraTrack}
                 cover="https://www.agora.io/en/wp-content/uploads/2022/10/3d-spatial-audio-icon.svg"
               >
-                <samp className="user-name">You</samp>
+                <div className="user-name">You</div>
               </LocalUser>
             </div>
             {remoteUsers.map((user) => (
@@ -60,7 +71,7 @@ export const Basics = () => {
           </div>
         ) : (
           <div className="join-room">
-            <input
+            {/* <input
               onChange={e => setAppId(e.target.value)}
               placeholder="<Your app ID>"
               value={appId}
@@ -74,14 +85,20 @@ export const Basics = () => {
               onChange={e => setToken(e.target.value)}
               placeholder="<Your token>"
               value={token}
+            /> */}
+            <div className="channelName">房间名称</div>
+             <input
+              onChange={e => setChannel(e.target.value)}
+              placeholder="请输入会议房间"
+              value={channel}
             />
-
+            
             <button
-              className={`join-channel ${!appId || !channel ? "disabled" : ""}`}
-              disabled={!appId || !channel}
-              onClick={() => setCalling(true)}
+              className={`join-channel ${!channel ? "disabled" : ""}`}
+              disabled={!channel}
+              onClick={() => onVerify()}
             >
-              <span>Join Channel</span>
+              <span>加入会议</span>
             </button>
           </div>
         )}
