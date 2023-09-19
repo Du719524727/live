@@ -36,7 +36,7 @@ export const Basics = () => {
   const onVerify = async () => {
     if (channel === 'app') {
       setAppId('b751b23b4f36458b97bfd00a6c304a7f')
-      setToken('007eJxTYFjc/6rlRVHwsbid6wwq+OR4KqM67x/bsdqmd+M52y67w68VGJLMTQ2TjIyTTNKMzUxMLZIszZPSUgwMEs2SjQ1MEs3T8jezpzYEMjLcXsHBzMgAgSA+M0NiQQEDAwCWFCAZ')
+      setToken('007eJxTYKjf2JVg5R97f3HWD9NFX1Zn6alky10wK3tbz2ytmMC44oMCQ5K5qWGSkXGSSZqxmYmpRZKleVJaioFBolmysYFJonmarDJnakMgI4Oo8BNmRgYIBPGZGRILChgYAMdXHII=')
     }
 
     setCalling(true)
